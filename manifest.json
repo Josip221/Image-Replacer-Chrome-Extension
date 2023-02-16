@@ -1,0 +1,25 @@
+{
+  "name": "Zenta++",
+  "manifest_version": 3,
+  "version": "1.0",
+  "description": "Replace all images",
+  "content_scripts": [
+    {
+      "js": ["content.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["activeTab", "scripting"],
+  "web_accessible_resources": [
+    {
+      "resources": ["/src/*.jpg"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html"
+  }
+}
